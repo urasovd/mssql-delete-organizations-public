@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подготовка копии после выделения</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="112">
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="113"/>
+			<ChildItems>
+				<Page name="СтраницаФайлы" id="62">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файлы на томах</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаФайлыРасширеннаяПодсказка" id="63"/>
+					<ChildItems>
+						<LabelDecoration name="ПояснениеФайлы" id="1">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Файлы из томов загружаются в информационную базу. Файлы на томах не удаляются и не изменяются. Если сервер 1С не видит каталог тома, укажите подмену пути (каталог с копией файлов) или сохраните для сервера учетные данные хранилища.</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ПояснениеФайлыКонтекстноеМеню" id="2"/>
+							<ExtendedTooltip name="ПояснениеФайлыРасширеннаяПодсказка" id="3"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаКомандыФайлов" id="12">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыФайловРасширеннаяПодсказка" id="13"/>
+							<ChildItems>
+								<Button name="КнопкаОбновитьСводку" id="4">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОбновитьСводку</CommandName>
+									<ExtendedTooltip name="КнопкаОбновитьСводкуРасширеннаяПодсказка" id="5"/>
+								</Button>
+								<Button name="КнопкаПроверитьФайлы" id="6">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПроверитьФайлы</CommandName>
+									<ExtendedTooltip name="КнопкаПроверитьФайлыРасширеннаяПодсказка" id="7"/>
+								</Button>
+								<Button name="КнопкаЗагрузитьФайлы" id="8">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗагрузитьФайлы</CommandName>
+									<ExtendedTooltip name="КнопкаЗагрузитьФайлыРасширеннаяПодсказка" id="9"/>
+								</Button>
+								<Button name="КнопкаОтвязатьТома" id="10">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОтвязатьТома</CommandName>
+									<ExtendedTooltip name="КнопкаОтвязатьТомаРасширеннаяПодсказка" id="11"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Тома" id="29">
+							<DataPath>Тома</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тома</v8:content>
+								</v8:item>
+							</Title>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>5</HeightInTableRows>
+							<SearchStringLocation>None</SearchStringLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ContextMenu name="ТомаКонтекстноеМеню" id="30"/>
+							<AutoCommandBar name="ТомаКоманднаяПанель" id="31"/>
+							<SearchStringAddition name="ТомаСтрокаПоиска" id="32"/>
+							<ViewStatusAddition name="ТомаСостояниеПросмотра" id="33"/>
+							<SearchControlAddition name="ТомаУправлениеПоиском" id="34"/>
+							<ChildItems>
+								<InputField name="ТомаТом" id="14">
+									<DataPath>Тома.Том</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Том</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТомаТомКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ТомаТомРасширеннаяПодсказка" id="16"/>
+								</InputField>
+								<InputField name="ТомаПуть" id="17">
+									<DataPath>Тома.Путь</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Каталог</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТомаПутьКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ТомаПутьРасширеннаяПодсказка" id="19"/>
+								</InputField>
+								<InputField name="ТомаФайлов" id="20">
+									<DataPath>Тома.Файлов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Файлов</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТомаФайловКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="ТомаФайловРасширеннаяПодсказка" id="22"/>
+								</InputField>
+								<InputField name="ТомаРазмерМБ" id="23">
+									<DataPath>Тома.РазмерМБ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Размер, МБ</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТомаРазмерМБКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="ТомаРазмерМБРасширеннаяПодсказка" id="25"/>
+								</InputField>
+								<InputField name="ТомаДоступен" id="26">
+									<DataPath>Тома.Доступен</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Доступен серверу 1С</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ТомаДоступенКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ТомаДоступенРасширеннаяПодсказка" id="28"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<UsualGroup name="ГруппаПараметрыФайлов" id="41">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>WeakSeparation</Representation>
+							<ShowTitle>true</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыФайловРасширеннаяПодсказка" id="42"/>
+							<ChildItems>
+								<InputField name="ПодменаПутей" id="35">
+									<DataPath>ПодменаПутей</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подмена путей</v8:content>
+										</v8:item>
+									</Title>
+									<MultiLine>true</MultiLine>
+									<Height>2</Height>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>\\server\share\ =&gt; D:\copy\ (по строке на правило)</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="ПодменаПутейКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ПодменаПутейРасширеннаяПодсказка" id="37"/>
+								</InputField>
+								<InputField name="ПорцияФайлов" id="38">
+									<DataPath>ПорцияФайлов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Файлов за вызов сервера</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПорцияФайловКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ПорцияФайловРасширеннаяПодсказка" id="40"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДоступСервера" id="60">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доступ сервера 1С к хранилищу</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>WeakSeparation</Representation>
+							<ShowTitle>true</ShowTitle>
+							<ExtendedTooltip name="ГруппаДоступСервераРасширеннаяПодсказка" id="61"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаУчетныеДанные" id="52">
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаУчетныеДанныеРасширеннаяПодсказка" id="53"/>
+									<ChildItems>
+										<InputField name="СерверХранилища" id="43">
+											<DataPath>СерверХранилища</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сервер хранилища (имя, например fileserver)</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="СерверХранилищаКонтекстноеМеню" id="44"/>
+											<ExtendedTooltip name="СерверХранилищаРасширеннаяПодсказка" id="45"/>
+										</InputField>
+										<InputField name="ПользовательХранилища" id="46">
+											<DataPath>ПользовательХранилища</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пользователь</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ПользовательХранилищаКонтекстноеМеню" id="47"/>
+											<ExtendedTooltip name="ПользовательХранилищаРасширеннаяПодсказка" id="48"/>
+										</InputField>
+										<InputField name="ПарольХранилища" id="49">
+											<DataPath>ПарольХранилища</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пароль</v8:content>
+												</v8:item>
+											</Title>
+											<PasswordMode>true</PasswordMode>
+											<ContextMenu name="ПарольХранилищаКонтекстноеМеню" id="50"/>
+											<ExtendedTooltip name="ПарольХранилищаРасширеннаяПодсказка" id="51"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКомандыДоступа" id="58">
+									<Group>AlwaysHorizontal</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКомандыДоступаРасширеннаяПодсказка" id="59"/>
+									<ChildItems>
+										<Button name="КнопкаПроверитьДоступ" id="54">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПроверитьДоступ</CommandName>
+											<ExtendedTooltip name="КнопкаПроверитьДоступРасширеннаяПодсказка" id="55"/>
+										</Button>
+										<Button name="КнопкаСохранитьУчетныеДанные" id="56">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.СохранитьУчетныеДанные</CommandName>
+											<ExtendedTooltip name="КнопкаСохранитьУчетныеДанныеРасширеннаяПодсказка" id="57"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПроводки" id="110">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проводки удаляемых документов</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПроводкиРасширеннаяПодсказка" id="111"/>
+					<ChildItems>
+						<LabelDecoration name="ПояснениеПроводки" id="64">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для перехода на типовую конфигурацию: движения документов, виды которых исчезнут, переносятся в документы &quot;Операция (бух)&quot;, документы помечаются на удаление. Отметьте виды документов; виды из расширений и с указанными префиксами отмечаются автоматически.</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ПояснениеПроводкиКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="ПояснениеПроводкиРасширеннаяПодсказка" id="66"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаПараметрыПроводок" id="73">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыПроводокРасширеннаяПодсказка" id="74"/>
+							<ChildItems>
+								<InputField name="ПрефиксыДокументов" id="67">
+									<DataPath>ПрефиксыДокументов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Префиксы удаляемых документов</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПрефиксыДокументовКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ПрефиксыДокументовРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ИсключитьРегистры" id="70">
+									<DataPath>ИсключитьРегистры</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не переносить регистры с префиксами</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ИсключитьРегистрыКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ИсключитьРегистрыРасширеннаяПодсказка" id="72"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКомандыПроводок" id="81">
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыПроводокРасширеннаяПодсказка" id="82"/>
+							<ChildItems>
+								<Button name="КнопкаЗаполнитьВидыДокументов" id="75">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьВидыДокументов</CommandName>
+									<ExtendedTooltip name="КнопкаЗаполнитьВидыДокументовРасширеннаяПодсказка" id="76"/>
+								</Button>
+								<Button name="КнопкаПроверитьПеренос" id="77">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПроверитьПеренос</CommandName>
+									<ExtendedTooltip name="КнопкаПроверитьПереносРасширеннаяПодсказка" id="78"/>
+								</Button>
+								<Button name="КнопкаПеренестиПроводки" id="79">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПеренестиПроводки</CommandName>
+									<ExtendedTooltip name="КнопкаПеренестиПроводкиРасширеннаяПодсказка" id="80"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ВидыДокументов" id="104">
+							<DataPath>ВидыДокументов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Виды документов с движениями</v8:content>
+								</v8:item>
+							</Title>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>10</HeightInTableRows>
+							<SearchStringLocation>None</SearchStringLocation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ContextMenu name="ВидыДокументовКонтекстноеМеню" id="105"/>
+							<AutoCommandBar name="ВидыДокументовКоманднаяПанель" id="106"/>
+							<SearchStringAddition name="ВидыДокументовСтрокаПоиска" id="107"/>
+							<ViewStatusAddition name="ВидыДокументовСостояниеПросмотра" id="108"/>
+							<SearchControlAddition name="ВидыДокументовУправлениеПоиском" id="109"/>
+							<ChildItems>
+								<CheckBoxField name="ВидыДокументовПометка" id="83">
+									<DataPath>ВидыДокументов.Пометка</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Переносить</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ВидыДокументовПометкаКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="ВидыДокументовПометкаРасширеннаяПодсказка" id="85"/>
+								</CheckBoxField>
+								<InputField name="ВидыДокументовДокумент" id="86">
+									<DataPath>ВидыДокументов.Документ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ВидыДокументовДокументКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ВидыДокументовДокументРасширеннаяПодсказка" id="88"/>
+								</InputField>
+								<InputField name="ВидыДокументовПредставление" id="89">
+									<DataPath>ВидыДокументов.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представление</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ВидыДокументовПредставлениеКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="ВидыДокументовПредставлениеРасширеннаяПодсказка" id="91"/>
+								</InputField>
+								<InputField name="ВидыДокументовДокументов" id="92">
+									<DataPath>ВидыДокументов.Документов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документов</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ВидыДокументовДокументовКонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="ВидыДокументовДокументовРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="ВидыДокументовДвижений" id="95">
+									<DataPath>ВидыДокументов.Движений</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Движений</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ВидыДокументовДвиженийКонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="ВидыДокументовДвиженийРасширеннаяПодсказка" id="97"/>
+								</InputField>
+								<InputField name="ВидыДокументовРегистры" id="98">
+									<DataPath>ВидыДокументов.Регистры</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистры</v8:content>
+										</v8:item>
+									</Title>
+									<ReadOnly>true</ReadOnly>
+									<ContextMenu name="ВидыДокументовРегистрыКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="ВидыДокументовРегистрыРасширеннаяПодсказка" id="100"/>
+								</InputField>
+								<CheckBoxField name="ВидыДокументовИзРасширения" id="101">
+									<DataPath>ВидыДокументов.ИзРасширения</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Из расширения</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ВидыДокументовИзРасширенияКонтекстноеМеню" id="102"/>
+									<ExtendedTooltip name="ВидыДокументовИзРасширенияРасширеннаяПодсказка" id="103"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Протокол" id="114">
+			<DataPath>Протокол</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Протокол</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<MultiLine>true</MultiLine>
+			<Height>8</Height>
+			<ContextMenu name="ПротоколКонтекстноеМеню" id="115"/>
+			<ExtendedTooltip name="ПротоколРасширеннаяПодсказка" id="116"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="117">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ПодготовкаКопииПослеВыделения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Тома" id="123">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Том" id="118">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Том</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Путь" id="119">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Каталог</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Файлов" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Файлов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="РазмерМБ" id="121">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размер, МБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>1</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Доступен" id="122">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступен серверу 1С</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВидыДокументов" id="131">
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пометка" id="124">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Переносить</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Документ" id="125">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="126">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Документов" id="127">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документов</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Движений" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Движений</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="Регистры" id="129">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистры</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИзРасширения" id="130">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Из расширения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПодменаПутей" id="132">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подмена путей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПорцияФайлов" id="133">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Файлов за вызов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СерверХранилища" id="134">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользовательХранилища" id="135">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПарольХранилища" id="136">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрефиксыДокументов" id="137">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсключитьРегистры" id="138">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Протокол" id="139">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьСводку" id="140">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сколько файлов на каких томах</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьСводку</Action>
+		</Command>
+		<Command name="ПроверитьФайлы" id="141">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить файлы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прочитать каждый файл с тома и сверить размер. Ничего не меняет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьФайлы</Action>
+		</Command>
+		<Command name="ЗагрузитьФайлы" id="142">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить в базу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить файлы с томов в информационную базу. Файлы на томах не удаляются</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьФайлы</Action>
+		</Command>
+		<Command name="ОтвязатьТома" id="143">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отвязать тома</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить хранение в томах и очистить пути томов без файлов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтвязатьТома</Action>
+		</Command>
+		<Command name="ПроверитьДоступ" id="144">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить доступ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Видит ли сервер 1С каталоги томов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьДоступ</Action>
+		</Command>
+		<Command name="СохранитьУчетныеДанные" id="145">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить для сервера 1С</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить учетные данные хранилища (cmdkey) для учетной записи сервера 1С</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьУчетныеДанные</Action>
+		</Command>
+		<Command name="ЗаполнитьВидыДокументов" id="146">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти виды документов с движениями</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьВидыДокументов</Action>
+		</Command>
+		<Command name="ПроверитьПеренос" id="147">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить перенос</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Посчитать документы и движения к переносу. Ничего не меняет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПеренос</Action>
+		</Command>
+		<Command name="ПеренестиПроводки" id="148">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести в операции</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести движения отмеченных видов документов в операции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиПроводки</Action>
+		</Command>
+	</Commands>
+</Form>

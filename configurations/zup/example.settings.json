@@ -1,0 +1,13 @@
+{
+  "server": "sqlserver",
+  "database": "zup_copy",
+  "source_database": "zup_source",
+  "organizations": [
+    "e1cib/data/Справочник.Организации?ref=aabbccddeeff00112233445566778899"
+  ],
+  "catalog_profile": "aggressive",
+  "reconcile_period_to": "2026-09-30",
+  "backup_directory": "D:\\Backup",
+  "infobase": "server1c\\zup_copy",
+  "artifacts": "artifacts/zup-example"
+}

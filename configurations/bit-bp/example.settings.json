@@ -1,0 +1,13 @@
+{
+  "server": "sqlserver",
+  "database": "bit_copy",
+  "source_database": "bit_source",
+  "organizations": [
+    "0xaabbccddeeff00112233445566778899"
+  ],
+  "catalog_profile": "aggressive",
+  "reconcile_period_to": "2026-10-31",
+  "backup_directory": "D:\\Backup",
+  "infobase": "server1c\\bit_copy",
+  "artifacts": "artifacts/bit-example"
+}

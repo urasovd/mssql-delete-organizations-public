@@ -1,0 +1,24 @@
+# Run outputs: manifests, CSV, logs with object IDs
+artifacts/
+
+# Local settings and secrets
+*.local.*
+*.secret.*
+.env
+.env.*
+
+# Build products; SQL CLR source is versioned, binaries are not
+scripts/sqlclr/out/
+*.dll
+*.pdb
+
+# Built 1C tools (sources are in 1c/)
+build/
+
+# Editor/OS noise
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
