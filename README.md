@@ -189,3 +189,9 @@ $s = 'configurations\zup\my-extraction.settings.json'
   токен; `Apply` по умолчанию делает бэкап.
 - В Git не попадают пароли, строки подключения, построчные выгрузки и
   манифесты с ID — см. [docs/DATA-HANDLING.md](docs/DATA-HANDLING.md).
+
+## Лицензия
+
+Код распространяется по лицензии [MIT](LICENSE). Она относится только к коду
+этого репозитория и не меняет условий лицензии 1С на платформу и
+конфигурации: см. [docs/LICENSE-NOTES.md](docs/LICENSE-NOTES.md).
